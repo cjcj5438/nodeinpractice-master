@@ -1,9 +1,12 @@
 var fs = require('fs');
 
-fs.readFile('./world.dbf', function (err, buf) {
+fs.readFile('./world.dbf', function (err, buf) { //这里的buf 参数是<string> | <Buffer>
   var header = {};
 
   var date = new Date();
+
+  console.log(buf[2]);
+  console.log(buf);
   date.setFullYear(1900 + buf[1]);
   date.setMonth(buf[2]);
   date.setDate(buf[3]);
@@ -53,5 +56,5 @@ fs.readFile('./world.dbf', function (err, buf) {
     records.push(record);
   }
 
-  console.log({ header: header, fields: fields, records: records });
+  // console.log({ header: header, fields: fields, records: records });
 })

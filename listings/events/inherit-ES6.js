@@ -1,26 +1,24 @@
-var util = require('util');
-var events = require('events');
-var AudioDevice = {
+const events = require('events').EventEmitter;
+const util = require('util');
+
+let AudioDevice = {
     play: function (track) {
         console.log(track)
-        // Stub: Trigger playback through iTunes, mpg123, etc.
     },
     stop: function () {
         console.log('stop')
     }
 };
 
-function MusicPlayer() {
-    this.playing = false;
-    //.call就可以使用events
-    events.EventEmitter.call(this);
+class M extends events {
+    constructor() {
+        super();
+        this.playing = false;
+    }
 }
 
-//MusicPlayer继承events.EventEmitter
-util.inherits(MusicPlayer, events.EventEmitter);
+var musicPlayer = new M();
 
-var musicPlayer = new MusicPlayer();
-//TODO:emitter.on(eventName, listener) 监听函数
 musicPlayer.on('play', function (track) {
     this.playing = true;
     AudioDevice.play(track);

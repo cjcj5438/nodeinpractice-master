@@ -9,7 +9,7 @@ util.inherits(EventTracker, events.EventEmitter);
 
 var eventTracker = new EventTracker();
 
-eventTracker.on('newListener', function(name, listener) //<co id="callout-reflection-1-1" />{
+eventTracker.on('newListener', function(name, listener){ //<co id="callout-reflection-1-1" />{
   console.log('Event name added:', name);
 });
 
