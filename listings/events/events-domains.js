@@ -1,5 +1,6 @@
+//TODO:已经废弃
 var util = require('util');
-var domain = require('domain'); //<co id="callout-events-domains-1" />
+var domain = require('domain'); //这个模块能被集中处理多个异步操作
 var events = require('events');
 var audioDomain = domain.create();
 

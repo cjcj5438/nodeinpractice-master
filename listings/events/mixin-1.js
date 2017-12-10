@@ -4,8 +4,9 @@ function MusicPlayer(track) {
   this.track = track;
   this.playing = false;
 
-  for (var methodName in EventEmitter.prototype) { //<co id="callout-events-mixin-1" />
-    this[methodName] = EventEmitter.prototype[methodName];
+  for (var methodName in EventEmitter.prototype) { //TODO这里是原型上的方法
+      //除了我们可以实现继承之外,我们还能这样拷贝的方法 . 首先的药有一个现成的类
+      this[methodName] = EventEmitter.prototype[methodName];
   }
 }
 
