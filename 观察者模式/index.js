@@ -3,11 +3,11 @@ let Oserver = (function () {
     return {
         regist: function (type, fn) {
             //如果消息不存在, 应当创建该条消息类型
-            if (typeof _messages[type] === '
+            if (typeof _messages[type] === 'undefined') {
+                //将动作推入该消息对应的动作,执行列队中
+                _messages[type] = [fn]
             } else {
-                //如果存在,将动作方法推入该消息对应的动作执行序列中去undefined') {
-            //将动作推入该消息对应的动作,执行列队中
-            _messages[type] = [fn]
+                //如果存在,将动作方法推入该消息对应的动作执行序列中去
                 _messages[type].push(fn);
             }
         },
