@@ -1,3 +1,4 @@
+//从基类继承
 var Readable = require('stream').Readable;
 
 function MyStream(options) {
