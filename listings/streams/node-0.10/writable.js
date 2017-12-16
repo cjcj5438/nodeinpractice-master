@@ -1,6 +1,7 @@
+//实现一个可写流
 var stream = require('stream');
-//<co id="callout-streams-writable-1" />
-GreenStream.prototype = Object.create(stream.Writable.prototype, {
+//使用通常的继承模式来创建一个可写流类
+GreenStream.prototype = Object.create(stream.Writable.prototype, {//TODO:这种js的写法没有见过
   constructor: { value: GreenStream }
 });
 
