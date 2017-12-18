@@ -1,12 +1,12 @@
 var stream = require('stream');
-
+//一般的继承方法
 HungryStream.prototype = Object.create(stream.Duplex.prototype, {
   constructor: { value: HungryStream }
 });
-
+//取货父类的方法.
 function HungryStream(options) {
   stream.Duplex.call(this, options);
-  this.waiting = false; //<co id="callout-streams-duplex-1" />
+  this.waiting = false;
 }
 
 HungryStream.prototype._write = function(chunk, encoding, callback) {

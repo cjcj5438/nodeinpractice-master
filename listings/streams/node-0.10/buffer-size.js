@@ -4,7 +4,7 @@ var zlib = require('zlib');
 function benchStream(inSize, outSize) {
   var time = process.hrtime(); //<co id="callout-streams-buffer-size-1" />
   var watermark = process.memoryUsage().rss;
-  var input = fs.createReadStream('/usr/share/dict/words', {
+  var input = fs.createReadStream('./usr/share/dict/words', {
     bufferSize: inSize
   });
   var gzip = zlib.createGzip({ chunkSize: outSize });
