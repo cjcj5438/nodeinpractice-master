@@ -5,7 +5,7 @@ var mongoose = require('mongoose')
 var _ = require('underscore')
 var Movie = require('./models/movie')
 var port = process.env.PORT || 3000
-var app = express()
+var app = express();
 
 mongoose.connect('mongodb://localhost/imooc')
 
